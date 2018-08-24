@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Amber_Paul_Project"
+
+        xmlns:viewmodels="clr-namespace:Amber_Paul_Project.ViewModels"
+        xmlns:views="clr-namespace:Amber_Paul_Project.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1080" Width="1920" WindowState="Maximized" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
-        
+        <!--Element for displaying viewmodels-->
+        <ContentControl Content="{Binding}" />
     </Grid>
 </Window>

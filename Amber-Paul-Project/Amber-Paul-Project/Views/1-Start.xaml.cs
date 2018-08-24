@@ -12,18 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Amber_Paul_Project.ViewModels;
-using Amber_Paul_Project.Views;
 
-namespace Amber_Paul_Project
+namespace Amber_Paul_Project.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for _1_Start.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class _1_Start : UserControl
     {
-        public MainWindow()
-        { 
+        public _1_Start()
+        {
             InitializeComponent();
         }
     }

@@ -26,7 +26,10 @@ namespace Amber_Paul_Project.Views
     public partial class _2_TakePicture : UserControl
     {
         //Fields
-        private View_Controller view_Controller;
+            //Parent
+            private View_Controller view_Controller;
+
+        private bool inPreview = false;
         private Camera_Controller camera_Controller;
         public _2_TakePicture(View_Controller view)
         {
@@ -37,14 +40,56 @@ namespace Amber_Paul_Project.Views
             
         }
 
+        private void Capture()
+        {
+            //Takes Photo
+            camera_Controller.Capture();
+            //Freezes the camera and show preview of photo
+            //Shows taken picture
+            Image_preview.Source = camera_Controller.TakenPhoto;
+
+            //Changes button and label
+            Button_capture.Content = new BitmapImage(new Uri(@"/Amber-Paul-Project;component/Resources/UI/But_redo.png", UriKind.Relative));
+
+            inPreview = true;
+
+            Label_tevreden.Visibility = Visibility.Visible;
+            Button_continue.Visibility = Visibility.Visible;
+        }
+
+        private void ResetCamera()
+        {
+            //Resets the camera
+            camera_Controller.Reset();
+
+            //Disables and hides the preview
+            Image_preview.Source = null;
+            inPreview = false;
+
+            //Returns buttons and labels to their original state
+            Button_capture.Content = new BitmapImage(new Uri(@"/Amber-Paul-Project;component/Resources/UI/But_TakePic.png", UriKind.Relative));
+            Label_tevreden.Visibility = Visibility.Hidden;
+            Button_continue.Visibility = Visibility.Hidden;
+        }
+
         private void Button_capture_Click(object sender, RoutedEventArgs e)
         {
-            camera_Controller.Capture();
+            if (!inPreview)
+            {
+                Capture();
+
+            }
+            else if (inPreview)
+            {
+                ResetCamera();
+            }
         }
 
         private void Button_continue_Click(object sender, RoutedEventArgs e)
         {
-
+            //Resets Camera for the next user
+            ResetCamera();
+            view_Controller.GoToNextView();
         }
 
         private void webCameraControl_Loaded(object sender, RoutedEventArgs e)

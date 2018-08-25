@@ -56,7 +56,7 @@ namespace Amber_Paul_Project.Views
                 app_Controller.UpdateCurrentView();
             } else if(currentview == takepic)
             {
-                currentview = start;
+                currentview = greenremoval;
                 app_Controller.UpdateCurrentView();
             }
         }

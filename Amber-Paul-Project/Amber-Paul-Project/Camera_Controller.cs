@@ -39,6 +39,11 @@ namespace Amber_Paul_Project
             get { return webCameraControl; }
         }
 
+        public BitmapImage TakenPhoto
+        {
+            get { return takenPhoto; }
+        }
+
         //Constructor
         public Camera_Controller(WebCameraControl webcam)
         {

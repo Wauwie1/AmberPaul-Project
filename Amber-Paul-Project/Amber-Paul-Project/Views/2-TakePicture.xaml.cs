@@ -16,23 +16,14 @@ using System.Windows.Shapes;
 namespace Amber_Paul_Project.Views
 {
 
-    public partial class _1_Start : UserControl
-    {
-        //Fields
-            //Parent
-            private View_Controller view_Controller;
 
-        public _1_Start(View_Controller view)
+    public partial class _2_TakePicture : UserControl
+    {
+        private View_Controller view_Controller;
+        public _2_TakePicture(View_Controller view)
         {
             InitializeComponent();
-
-            //Sets Parent
             view_Controller = view;
-        }
-
-        private void Button_start_Click(object sender, RoutedEventArgs e)
-        {
-            view_Controller.GoToNextView();
         }
     }
 }

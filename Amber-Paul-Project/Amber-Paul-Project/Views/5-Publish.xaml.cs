@@ -12,27 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Amber_Paul_Project.ViewModels;
-using Amber_Paul_Project.Views;
 
-namespace Amber_Paul_Project
+namespace Amber_Paul_Project.Views
 {
-    public partial class MainWindow : Window
+
+    public partial class _5_Publish : UserControl
     {
         //Fields
-
-            //Child
-            private App_Controller app_Controller;
-
-        public MainWindow()
+            //Parent
+            private View_Controller view_Controller;
+        public _5_Publish(View_Controller view)
         {
             InitializeComponent();
 
-            //Initializes the app_controller child and sets the current
-            //view to start.
-            app_Controller = new App_Controller(this);
-            DataContext = app_Controller.CurrentView;
+            //Sets Parent
+            view_Controller = view;
         }
-
     }
 }

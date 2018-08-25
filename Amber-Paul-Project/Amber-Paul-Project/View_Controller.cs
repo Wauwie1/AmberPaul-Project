@@ -15,6 +15,9 @@ namespace Amber_Paul_Project.Views
             //Children
             private _1_Start start;
             private _2_TakePicture takepic;
+            private _3_GreenRemoval greenremoval;
+            private _4_Collage collage;
+            private _5_Publish publish;
 
         private object currentview;
 
@@ -36,6 +39,9 @@ namespace Amber_Paul_Project.Views
             //Set Children
             start = new _1_Start(this);
             takepic = new _2_TakePicture(this);
+            greenremoval = new _3_GreenRemoval(this);
+            collage = new _4_Collage(this);
+            publish = new _5_Publish(this);
 
             currentview = start;
         }
